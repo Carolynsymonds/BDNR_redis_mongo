@@ -1,13 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title2:</strong>
+  <strong>Titulo:</strong>
   <%= @post.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Creador:</strong>
   <%= @post.body %>
+</p>
+
+<p>
+  <strong>Fecha modificacion:</strong>
+  <%= @post.fecha %>
+</p>
+
+<p>
+  <strong>Contenido:</strong>
+  <%= @post.contenido %>
+</p>
+
+<p>
+  <strong>Revision:</strong>
+  <%= @post.revision %>
+</p>
+
+<p>
+  <strong>Mensaje:</strong>
+  <%= @post.mensaje %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
