@@ -30,3 +30,11 @@ module Blog
     # the framework and any gems in your application.
   end
 end
+
+require_relative 'boot'
+
+module Vexpo
+  class Application < Rails::Application
+    config.cache_storage = :redis_store, 'redis://localhost:6379/0/cache' , { expires_in: 90.minutes }
+  end
+end

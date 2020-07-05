@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Feed Views</h1>
+
+<% @feed_view_list.each do |feed_view_lis| %>
+  <pre>
+    <%= feed_view_lis %>
+  </pre>
+<% end %>
+
+
+<br>
+
+<%= link_to 'New Feed View', new_feed_view_path %>
