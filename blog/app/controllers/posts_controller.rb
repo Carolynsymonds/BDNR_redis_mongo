@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-        @post.revision += 1
+        # @post.revision += 1
 
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Wiki fue modificado correctamente.' }
@@ -71,6 +71,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :fecha, :contenido, :mensaje, :revision)
+      params.require(:post).permit(:title, :creator, :body, :date, :message, :revision)
     end
 end

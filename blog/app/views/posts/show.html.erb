@@ -6,18 +6,18 @@
 </p>
 
 <p>
-  <strong>Creador:</strong>
-  <%= @post.body %>
+  <strong>Creator:</strong>
+  <%= @post.creator %>
 </p>
 
 <p>
   <strong>Fecha modificacion:</strong>
-  <%= @post.fecha %>
+  <%= @post.date %>
 </p>
 
 <p>
-  <strong>Contenido:</strong>
-  <%= @post.contenido %>
+  <strong>Body:</strong>
+  <%= @post.body %>
 </p>
 
 <p>
@@ -26,8 +26,8 @@
 </p>
 
 <p>
-  <strong>Mensaje:</strong>
-  <%= @post.mensaje %>
+  <strong>Message:</strong>
+  <%= @post.message %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

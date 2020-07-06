@@ -14,15 +14,15 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "New Post"
 
-    fill_in "Creador", with: @post.body
+    fill_in "Body", with: @post.body
     fill_in "Titulo", with: @post.title
-    fill_in "Fecha modificacion", with: @post.fecha
-    fill_in "Contenido", with: @post.contenido
-    fill_in "Mensaje", with: @post.mensaje
+    fill_in "Edit Date", with: @post.fecha
+    fill_in "Body", with: @post.contenido
+    fill_in "Message", with: @post.mensaje
     fill_in "Revision", with: @post.revision
-    click_on "Create Post"
+    click_on "Create Wiki"
 
-    assert_text "Post was successfully created"
+    assert_text "Wiki was successfully created"
     click_on "Back"
   end
 
@@ -32,9 +32,9 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in "Creador", with: @post.body
     fill_in "Titulo", with: @post.title
-    fill_in "Fecha modificacion", with: @post.fecha
-    fill_in "Contenido", with: @post.contenido
-    fill_in "Mensaje", with: @post.mensaje
+    fill_in "Edit Date", with: @post.fecha
+    fill_in "Body", with: @post.contenido
+    fill_in "Message", with: @post.mensaje
     fill_in "Revision", with: @post.revision
     click_on "Update Post"
 

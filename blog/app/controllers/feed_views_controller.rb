@@ -10,7 +10,9 @@ class FeedViewsController < ApplicationController
     redis = Redis.new(host: "localhost")
 
     @feed_views = FeedView.all
-    @feed_view_list = redis.lrange("studentKey1", 0, -1)
+    @feed_view_list = redis.lrange("feeds", 0, -1)
+    list = redis.lrange("feeds", 0, -1)
+    @count = list.size
 
   end
 
@@ -41,7 +43,7 @@ class FeedViewsController < ApplicationController
     #feed_view = FeedView.new(feed_view_params)
 
 
-    redis.rpush('studentKey1', feed_view_params.to_json);
+    redis.rpush('feeds', feed_view_params.to_json);
 
     #  format.html { redirect_to @feed_view, notice: 'Feed view was successfully created.' }
 
@@ -92,6 +94,6 @@ class FeedViewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def feed_view_params
-      params.require(:feed_view).permit(:title, :user, :comitts, :issues, :pulls, :versions, :gists)
+      params.require(:feed_view).permit(:user, :comitts, :issues, :pulls, :versions, :gists, :date)
     end
 end

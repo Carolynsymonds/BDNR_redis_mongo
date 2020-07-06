@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @feed_view.title %>
-</p>
-
-<p>
   <strong>User:</strong>
   <%= @feed_view.user %>
 </p>
@@ -33,6 +28,11 @@
 <p>
   <strong>Gists:</strong>
   <%= @feed_view.gists %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @feed_view.date %>
 </p>
 
 <%= link_to 'Edit', edit_feed_view_path(@feed_view) %> |

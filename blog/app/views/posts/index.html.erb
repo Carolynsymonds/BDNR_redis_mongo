@@ -5,12 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Titulo</th>
-      <th>Creador</th>
-      <th>Fecha modificación</th>
-      <th>Contenido</th>
-      <th>Mensaje</th>
-      <th>Revision</th>
+      <th>Title</th>
+      <th>Creator</th>
+      <th>Edit Date</th>
+      <th>Body</th>
+      <th>Message</th>
+      <th>Revisions</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,14 +19,14 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
+        <td><%= post.creator %></td>
+        <td><%= post.date %></td>
         <td><%= post.body %></td>
-        <td><%= post.fecha %></td>
-        <td><%= post.contenido %></td>
-        <td><%= post.mensaje %></td>
+        <td><%= post.message %></td>
         <td><%= post.revision %></td>
-        <td><%= link_to 'Ver', post %></td>
-        <td><%= link_to 'Editar', edit_post_path(post) %></td>
-        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+        <td><%= link_to 'See', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'Crear nueva Wiki', new_post_path %>
+<%= link_to 'Create new Wiki', new_post_path %>
